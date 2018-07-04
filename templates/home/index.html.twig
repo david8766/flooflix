@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %} {% block body %}
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">
+            <img src="../public/images/flooflix2.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Accueil
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/category/showAll">Catégories</a>
+                </li>
+                {% if not user is defined %}
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">S'identifier</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">S'inscrire</a>
+                </li>
+                {% endif %} {% if user is defined %}
+                <li>
+                    <a class="nav-link" href="/user/showOne">Mon compte</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="/home/quit">Se deconnecter</a>
+                </li>
+                {% endif %}
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+            </form>
+        </div>
+    </nav>
+</header>
+<main role="main">
+    <div class="container">
+        <h1 class="display-4">FLOOFLIX</h1>
+        <p class="lead">Le cinéma à portée de clic....</p>
+        <hr class="my-4">
+        <p>Sélectionner votre film et faites chauffer le pop-corn !!</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="/category/showAll" role="button">choisir un film --></a>
+        </p>
+        {% if user is defined %}
+        <p>Bonjour {{ user }}</p>
+        {% endif %}
+    </div>
+</main>
+<footer role="footer" class="bg-dark">
+    <p>Blanc David</p>
+    <p>&copy tous droits réservés</p>
+    <a href="/admin">admin</a>
+
+</footer>
+{% endblock %}
+
+
+
