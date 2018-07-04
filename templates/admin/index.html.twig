@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %} {% block title %}Page d'administration{% endblock %} {% block body %}
+<div class="jumbotron">
+    <div class="container" id="administration">
+        <h1 class="display-4">Administration du site</h1>
+        <p class="lead">Cette page permet de gérer l'administration des utilisateurs et leurs roles, les catégories de film, les films ainsi
+            que leurs commentaires.</p>
+        <p>Il sera possible d'intéragir avec la base de données et de:</p>
+        <ul>
+            <li>Voir les listes des données</li>
+            <li>Ajouter des données</li>
+            <li>Modifier des données</li>
+            <li>Supprimer des données</li>
+        </ul>
+        <hr class="my-4">
+        <h2>liste des liens vers les formulaires de saisies:</h2>
+        <p>Lien vers la page d'administration des roles:
+            <a class="btn btn-primary btn-sm" href="/role" role="button">--></a>
+        </p>
+        <p>Lien vers la page d'administration des utilisateurs:
+            <a class="btn btn-primary btn-sm" href="/user" role="button">--></a>
+        </p>
+        <p>Lien vers la page d'administration des categories de films:
+            <a class="btn btn-primary btn-sm" href="/category" role="button">--></a>
+        </p>
+        <p>Lien vers la page d'administration des films:
+            <a class="btn btn-primary btn-sm" href="/movie" role="button">--></a>
+        </p>
+        <p>Lien vers la page d'administration des commentaires:
+            <a class="btn btn-primary btn-sm" href="/comment" role="button">--></a>
+        </p>
+
+        <a class="btn btn-primary btn-lg" href="/">Retour à l'accueil du site</a>
+
+    </div>
+</div>
+{% endblock %}
