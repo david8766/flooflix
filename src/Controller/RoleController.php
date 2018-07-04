@@ -10,13 +10,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/role")
- */
+
 class RoleController extends Controller
 {
     /**
-     * @Route("/", name="role_index", methods="GET")
+     * @Route("/role", name="role_index", methods="GET")
      */
     public function index(RoleRepository $roleRepository): Response
     {
@@ -24,7 +22,7 @@ class RoleController extends Controller
     }
 
     /**
-     * @Route("/new", name="role_new", methods="GET|POST")
+     * @Route("/role/new", name="role_new", methods="GET|POST")
      */
     public function new(Request $request): Response
     {
@@ -47,7 +45,7 @@ class RoleController extends Controller
     }
 
     /**
-     * @Route("/{id}", name="role_show", methods="GET")
+     * @Route("/role/{id}", name="role_show", methods="GET")
      */
     public function show(Role $role): Response
     {
@@ -55,7 +53,7 @@ class RoleController extends Controller
     }
 
     /**
-     * @Route("/{id}/edit", name="role_edit", methods="GET|POST")
+     * @Route("role/edit/{id}", name="role_edit", methods="GET|POST")
      */
     public function edit(Request $request, Role $role): Response
     {
@@ -75,7 +73,7 @@ class RoleController extends Controller
     }
 
     /**
-     * @Route("/{id}", name="role_delete", methods="DELETE")
+     * @Route("role/delete/{id}", name="role_delete", methods="DELETE")
      */
     public function delete(Request $request, Role $role): Response
     {

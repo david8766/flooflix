@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %} {% block title %}Choix par catégorie{% endblock %} {% block body %}
+<div class="container-fluid bg-dark">
+    <div class="jumbotron user">
+        <div class="container">
+            <h1>Votre compte</h1>
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Credits</th>
+                        <th>Login</th>
+                        <th>Mot de passe</th>
+                        <th>Mail</th>
+                        <th>Date d'inscription</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        {% if user.id is defined %}
+                        <td>{{ user.lastName }}</td>
+                        <td>{{ user.firstName }}</td>
+                        <td>{{ user.credits }}</td>
+                        <td>{{ user.login }}</td>
+                        <td>{{ user.password }}</td>
+                        <td>{{ user.mail }}</td>
+                        <td>{{ user.registerDate |date('d/m/Y H:i:s')}}</td>
+                        <td>
+                            <a class="btn btn-primary btn-sm" href="{{ path('user_edit', {'id': user.id}) }}">éditer</a>
+                        </td>
+                        {% endif %}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer class="footfilm">
+        <a class="btn btn-primary btn-lg float-left" href="/">Retour à l'accueil du site</a>
+    </footer>
+
+</div>
+{% endblock %}
