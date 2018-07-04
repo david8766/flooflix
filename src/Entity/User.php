@@ -72,6 +72,7 @@ class User
     {
         $this->movies = new ArrayCollection();
         $this->comments = new ArrayCollection();
+        $this->registerDate = new \DateTime('now');
     }
 
     public function getId()

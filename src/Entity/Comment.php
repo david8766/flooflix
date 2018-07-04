@@ -36,6 +36,11 @@ class Comment
      */
     private $movie;
 
+    public function __construct()
+    {
+        $this->postDate = new \DateTime('now');
+    }
+
     public function getId()
     {
         return $this->id;
@@ -88,4 +93,6 @@ class Comment
 
         return $this;
     }
+
+    
 }
