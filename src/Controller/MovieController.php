@@ -10,13 +10,11 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/movie")
- */
+
 class MovieController extends Controller
 {
     /**
-     * @Route("/", name="movie_index", methods="GET")
+     * @Route("/movie", name="movie_index", methods="GET")
      */
     public function index(MovieRepository $movieRepository): Response
     {
@@ -24,7 +22,7 @@ class MovieController extends Controller
     }
 
     /**
-     * @Route("/new", name="movie_new", methods="GET|POST")
+     * @Route("/movie/new", name="movie_new", methods="GET|POST")
      */
     public function new(Request $request): Response
     {
@@ -47,7 +45,7 @@ class MovieController extends Controller
     }
 
     /**
-     * @Route("/{id}", name="movie_show", methods="GET")
+     * @Route("/movie/{id}", name="movie_show", methods="GET")
      */
     public function show(Movie $movie): Response
     {
@@ -55,7 +53,7 @@ class MovieController extends Controller
     }
 
     /**
-     * @Route("/{id}/edit", name="movie_edit", methods="GET|POST")
+     * @Route("/movie/edit/{id}", name="movie_edit", methods="GET|POST")
      */
     public function edit(Request $request, Movie $movie): Response
     {
@@ -75,7 +73,7 @@ class MovieController extends Controller
     }
 
     /**
-     * @Route("/{id}", name="movie_delete", methods="DELETE")
+     * @Route("/movie/delete/{id}", name="movie_delete", methods="DELETE")
      */
     public function delete(Request $request, Movie $movie): Response
     {

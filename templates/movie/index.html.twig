@@ -1,41 +1,41 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Movie index{% endblock %}
-
+{% extends 'base.html.twig' %} 
+{% block title %}Liste des films{% endblock %} 
 {% block body %}
-    <h1>Movie index</h1>
-
-    <table class="table">
+<div class="container">
+    <h1>Liste des films</h1>
+    <table class="table table-dark">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Title</th>
+                <th>Titre</th>
                 <th>Synopsis</th>
-                <th>Price</th>
+                <th>Prix</th>
                 <th>Img</th>
-                <th>actions</th>
+                <th>Affiche du film</th>
             </tr>
         </thead>
         <tbody>
-        {% for movie in movies %}
+            {% for movie in movies %}
             <tr>
                 <td>{{ movie.id }}</td>
                 <td>{{ movie.title }}</td>
                 <td>{{ movie.synopsis }}</td>
                 <td>{{ movie.price }}</td>
                 <td>{{ movie.img }}</td>
-                <td>
-                    <a href="{{ path('movie_show', {'id': movie.id}) }}">show</a>
-                    <a href="{{ path('movie_edit', {'id': movie.id}) }}">edit</a>
+                <td style="text-align:center; vertical-align:middle">
+                    <a class="btn btn-primary btn-sm" href="{{ path('movie_show', {'id': movie.id}) }}">Voir</a>
+                    <hr>
+                    <a class="btn btn-primary btn-sm" href="{{ path('movie_edit', {'id': movie.id}) }}">Modifier</a>
                 </td>
             </tr>
-        {% else %}
+            {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="6">Aucun film enregistré</td>
             </tr>
-        {% endfor %}
+            {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('movie_new') }}">Create new</a>
+    <a class="btn btn-primary btn-lg" href="{{ path('movie_new') }}">Créer un nouveau film</a>
+    <a class="btn btn-primary btn-lg" href="/">Retour à l'accueil du site</a>
+</div>
 {% endblock %}

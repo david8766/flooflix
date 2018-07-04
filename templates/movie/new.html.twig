@@ -1,11 +1,10 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}New Movie{% endblock %}
-
-{% block body %}
-    <h1>Create new Movie</h1>
+{% extends 'base.html.twig' %} {% block title %}Ajout de film{% endblock %} {% block body %}
+<div class="container">
+    <h1>Ajouter un nouveau film:</h1>
 
     {{ include('movie/_form.html.twig') }}
-
-    <a href="{{ path('movie_index') }}">back to list</a>
+    <hr>
+    <a class="btn btn-primary btn-lg" href="{{ path('movie_index') }}">Retour à la liste</a>
+    <a class="btn btn-primary btn-lg" href="/">Retour à l'accueil du site</a>
+</div>
 {% endblock %}

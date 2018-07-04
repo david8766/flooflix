@@ -1,13 +1,12 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %} {% block title %}Modification des données{% endblock %} {% block body %}
+<div class="container">
+    <h1>Modifier les données de ce film</h1>
 
-{% block title %}Edit Movie{% endblock %}
-
-{% block body %}
-    <h1>Edit Movie</h1>
-
-    {{ include('movie/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('movie_index') }}">back to list</a>
-
+    {{ include('movie/_form.html.twig', {'button_label': 'Modifier'}) }}
+    <p>ou</p>
     {{ include('movie/_delete_form.html.twig') }}
+    <hr>
+    <a class="btn btn-primary btn-lg" href="{{ path('movie_index') }}">Retour à la liste</a>
+    <a class="btn btn-primary btn-lg" href="/">Retour à l'accueil du site</a>
+</div>
 {% endblock %}
