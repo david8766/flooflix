@@ -19,6 +19,18 @@ class UserRepository extends ServiceEntityRepository
         parent::__construct($registry, User::class);
     }
 
+    public function findByLog($login , $pwd)
+    {
+        return $this->createQueryBuilder('user')
+            ->andWhere('user.login = :login')
+            ->andWhere('user.password = :pwd')
+            ->setParameter('login', $login)
+            ->setParameter('pwd', $pwd)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
 //    /**
 //     * @return User[] Returns an array of User objects
 //     */
