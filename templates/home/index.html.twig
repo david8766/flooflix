@@ -17,7 +17,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/category/showAll">Catégories</a>
+                    <a class="nav-link" href="category/categories">Catégories</a>
                 </li>
                 {% if not user is defined %}
                 <li class="nav-item">
@@ -49,7 +49,7 @@
         <hr class="my-4">
         <p>Sélectionner votre film et faites chauffer le pop-corn !!</p>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="/category/showAll" role="button">choisir un film --></a>
+            <a class="btn btn-primary btn-lg" href="/category/categories" role="button">choisir un film --></a>
         </p>
         {% if user is defined %}
         <p>Bonjour {{ user }}</p>

@@ -45,6 +45,23 @@ class CategoryController extends Controller
     }
 
     /**
+     * @Route("/category/categories", name="category_categories", methods="GET")
+     */
+    public function categories(CategoryRepository $categoryRepository): Response
+    {
+        return $this->render('category/showCategories.html.twig', ['categories' => $categoryRepository->findAll()]);
+    }
+
+    /**
+     * @Route("/category/showMoviesByCategory/{id}", name="category_showMoviesByCategory", methods="GET")
+     */
+    
+    public function showMoviesByCategory(CategoryRepository $categoryRepository , $id):Response
+    {
+        return $this->render('category/showMoviesByCategory.html.twig', ['category' => $categoryRepository->find($id)]);
+    }
+
+    /**
      * @Route("/category/{id}", name="category_show", methods="GET")
      */
     public function show(Category $category): Response
@@ -85,5 +102,8 @@ class CategoryController extends Controller
 
         return $this->redirectToRoute('category_index');
     }
+
+     
+
    
 }
