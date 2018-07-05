@@ -85,4 +85,15 @@ class UserController extends Controller
 
         return $this->redirectToRoute('user_index');
     }
+
+    /**
+     * @Route("/user/showRegister/{id}", name="user_showRegister",methods="GET")
+     */
+    public function showRegister(User $user):Response
+    {
+        return $this->render('user/showRegister.html.twig', [
+            'controller_name' => 'UserController',
+            'user' => $user,
+        ]);
+    }
 }

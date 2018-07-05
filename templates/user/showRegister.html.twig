@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %} {% block title %}FLOOFLIX-Inscription{% endblock %} {% block body %}
+<div class="container">
+    <h1>Voici les données enregistrées dans votre compte utilisateur:</h1>
+
+    <table class="table table-dark">
+        <tbody>
+            <tr>
+                <th>Nom</th>
+                <td>{{ user.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Prénom</th>
+                <td>{{ user.firstName }}</td>
+            </tr>
+            <tr>
+                <th>Credits</th>
+                <td>{{ user.credits }}</td>
+            </tr>
+            <tr>
+                <th>Login</th>
+                <td>{{ user.login }}</td>
+            </tr>
+            <tr>
+                <th>Mail</th>
+                <td>{{ user.mail }}</td>
+            </tr>
+            <tr>
+                <th>Date d'inscription</th>
+                <td>{{ user.registerDate|date('d/m/Y H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Pour vous identifier en tant qu'utilisateur, veuillez retourner à l'acceuil en cliquant ci-dessous</p>
+    <a class="btn btn-primary btn-lg" href="/">Retour à l'accueil du site</a>
+</div>
+{% endblock %}

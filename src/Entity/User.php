@@ -135,7 +135,8 @@ class User
 
     public function setPassword(?string $password): self
     {
-        $this->password = $password;
+        $algo = PASSWORD_DEFAULT;
+        $this->password = password_hash($password,$algo);
 
         return $this;
     }
