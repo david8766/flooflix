@@ -22,6 +22,17 @@ class UserController extends Controller
     }
 
     /**
+     * @Route("/user/register/{id}", name="user_register",methods="GET")
+     */
+    public function register(User $user):Response
+    {
+        return $this->render('user/showRegister.html.twig', [
+            'controller_name' => 'UserController',
+            'user' => $user,
+        ]);
+    }
+
+    /**
      * @Route("/user/new", name="user_new", methods="GET|POST")
      */
     public function new(Request $request): Response
@@ -86,14 +97,4 @@ class UserController extends Controller
         return $this->redirectToRoute('user_index');
     }
 
-    /**
-     * @Route("/user/showRegister/{id}", name="user_showRegister",methods="GET")
-     */
-    public function showRegister(User $user):Response
-    {
-        return $this->render('user/showRegister.html.twig', [
-            'controller_name' => 'UserController',
-            'user' => $user,
-        ]);
-    }
 }

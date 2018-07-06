@@ -22,23 +22,33 @@ main {
 }
 
 footer {
-    text-align: center;   
+    text-align: center; 
+    bottom: 0px;   
 }
 
 footer p {
     margin-bottom: 0;
     color: aliceblue;
 }
-footer a {
+li:nth-child(5){
     visibility: visible;
-    color: aliceblue;
-    text-align: right !important;
     border: 0.1rem solid white;
     border-radius: 2rem;
-    background-color: black;
+    background-color: rgb(252, 69, 69);
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
     padding-left: 0.5em;
     padding-right: 0.5em;
-    padding-bottom: 0.1em;
+    
+    
+}
+li:nth-child(5) a{
+    color: aliceblue;
+    text-decoration: none;
+}
+li:nth-child(5) a:hover {
+    color: yellowgreen;
+    text-decoration: none;
 }
 footer a:hover{
     color:black;
@@ -63,6 +73,9 @@ h1 {
 }
 hr{
     background-color: red;
+}
+.home{
+    color: rgb(252, 229, 165);
 }
 .jumbotron{
     height: 100%;
@@ -169,7 +182,4 @@ hr{
     margin-top: 5em;
     margin-left: 10em;
     font-size: 1em;
-}
-#img-film{
-    
 }

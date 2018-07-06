@@ -17,7 +17,8 @@ class HomeController extends Controller
         {
             return $this->render('home/index.html.twig', [
                 'controller_name' => 'HomeController',
-                'user' => $session->get('connected')[0]->getFirstName()
+                'user' => $session->get('connected')[0]->getFirstName(),
+                'userRole' => $session->get('connected')[0]->getRole()
             ]);
         } else {
             return $this->render('home/index.html.twig', [
@@ -32,10 +33,11 @@ class HomeController extends Controller
     public function quit(SessionInterface $session){
         if(!is_null($session->get('connected')))
         {
-            unset($session);
-            return $this->render('home/index.html.twig', [
-                'controller_name' => 'HomeController',
-                
+            $session->set('connected',null);
+            $session->save();
+            
+            return $this->render('home/quit.html.twig', [
+                'controller_name' => 'HomeController'
             ]);
         }
     }

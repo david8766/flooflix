@@ -22,6 +22,14 @@ class MovieController extends Controller
     }
 
     /**
+     * @Route("/movie/comments/{id}", name="movie_comments", methods="GET")
+     */
+    public function comments(Movie $movie): Response
+    {
+        return $this->render('movie/showComments.html.twig', ['movie' => $movie]);
+    }
+
+    /**
      * @Route("/movie/new", name="movie_new", methods="GET|POST")
      */
     public function new(Request $request): Response

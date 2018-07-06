@@ -56,7 +56,7 @@ class RegisterController extends Controller
         $model->persist($user);
         $model->flush();
 
-        return $this->redirect($this->generateUrl('user_showRegister', array('id' => $user->getId())));
+        return $this->redirect($this->generateUrl('user_register', array('id' => $user->getId())));
     
     }
 }

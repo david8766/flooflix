@@ -1,8 +1,9 @@
-{% extends 'base.html.twig' %} {% block body %}
+{% extends 'base.html.twig' %} 
+{% block body %}
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="/">
-            <img src="../public/images/flooflix2.png" alt="">
+            <img src="../images/flooflix2.png" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -28,10 +29,15 @@
                 </li>
                 {% endif %} {% if user is defined %}
                 <li>
-                    <a class="nav-link" href="/user/showOne">Mon compte</a>
+                    <a class="nav-link" href="/user/register">Mon compte</a>
                 </li>
                 <li>
                     <a class="nav-link" href="/home/quit">Se deconnecter</a>
+                </li>
+                {% endif %}
+                {% if user is defined and userRole.id == 1 %}
+                <li>
+                    <a href="/admin">admin</a>
                 </li>
                 {% endif %}
             </ul>
@@ -43,24 +49,22 @@
     </nav>
 </header>
 <main role="main">
-    <div class="container">
+    <div class="container home">
         <h1 class="display-4">FLOOFLIX</h1>
         <p class="lead">Le cinéma à portée de clic....</p>
         <hr class="my-4">
         <p>Sélectionner votre film et faites chauffer le pop-corn !!</p>
+         {% if user is defined %}
+        <p style="color:blue">Bonjour {{ user }} !</p>
+        {% endif %}
         <p class="lead">
             <a class="btn btn-primary btn-lg" href="/category/categories" role="button">choisir un film --></a>
-        </p>
-        {% if user is defined %}
-        <p>Bonjour {{ user }}</p>
-        {% endif %}
+        </p> 
     </div>
 </main>
 <footer role="footer" class="bg-dark">
     <p>Blanc David</p>
     <p>&copy tous droits réservés</p>
-    <a href="/admin">admin</a>
-
 </footer>
 {% endblock %}
 

@@ -6,6 +6,7 @@ use App\Entity\Category;
 use App\Form\CategoryType;
 use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -56,9 +57,18 @@ class CategoryController extends Controller
      * @Route("/category/showMoviesByCategory/{id}", name="category_showMoviesByCategory", methods="GET")
      */
     
-    public function showMoviesByCategory(CategoryRepository $categoryRepository , $id):Response
+    public function showMoviesByCategory(CategoryRepository $categoryRepository , $id , SessionInterface $session):Response
     {
+        if(!is_null($session->get('connected')))
+        {
+            return $this->render('category/showMoviesByCategory.html.twig', [
+                'controller_name' => 'CategoryController',
+                'category' => $categoryRepository->find($id),
+                'user' => $session->get('connected')[0]
+            ]);
+        } else {
         return $this->render('category/showMoviesByCategory.html.twig', ['category' => $categoryRepository->find($id)]);
+        }
     }
 
     /**

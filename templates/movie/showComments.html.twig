@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %} 
+{% block title %}liste des commentaires pour le film "{{ movie.title }}"{% endblock %}
+{% block body %}
+<div class="container-fluid bg-dark">
+<a href="/">
+    <img src="../../images/flooflix2.png" alt="FLOOFLIX">
+</a>
+    <div class="jumbotron film">
+        <div class="container">
+            <h1>Liste des commentaires pour le film "{{ movie.title }}"</h1>
+            <div class="card-group">
+                <div class="row">
+                    {% for comment in movie.comments %}
+                    <div class="card text-white bg-dark mb-3 col-md-12">
+                        <div class="card-body">
+                            <h2 class="card-title">Commentaire de {{ comment.user.login }}</h2> 
+                            <p>postée le  {{ comment.postDate ? comment.postDate|date('Y-m-d H:i:s') : '' }}</p>
+                            <p>{{ comment.content }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footfilm">
+        <a class="btn btn-primary btn-lg" href="/category/showMoviesByCategory/{{ movie.category.id }}">Retour à la liste des films</a>
+        <a class="btn btn-primary btn-lg float-left" href="/">Retour à l'accueil du site</a>
+    </footer>
+</div>
+{% endblock %}

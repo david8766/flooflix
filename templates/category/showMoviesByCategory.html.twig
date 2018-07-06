@@ -1,12 +1,17 @@
-{% extends 'base.html.twig' %} {% block title %}Choix des films{% endblock %} {% block body %}
+{% extends 'base.html.twig' %} 
+{% block title %}Choix des films{% endblock %} 
+{% block body %}
 <div class="container-fluid bg-dark">
-    <div class="jumbotron pop film">
-        <div class="container">
+    <a href="/">
+        <img src="../../images/flooflix2.png" alt="FLOOFLIX">
+    </a>
+    <div class="jumbotron pop film">   
+        <div class="container"> 
             <h1>Les films de la catégorie "{{ category.genre }}" :</h1>
             <div class="card-group">
                 <div class="row">
                     {% for movie in category.movies %}
-                    <div class="card text-white bg-dark mb-3 col-md-8">
+                    <div class="card text-white bg-dark mb-3 col-md-12">
                         <div class="card-body">
                             <div class="card-block">
                                 <div class="container">
@@ -26,7 +31,10 @@
                                                 <u>Prix:</u>
                                             </h3>
                                             <p>{{ movie.price }} &euro;</p>
+                                            {% if user is defined %}
                                             <a class="btn btn-danger btn-lg" href="">ajouter au panier</a>
+                                            {% endif %}
+                                            <a class="btn btn-info btn-lg" href="/movie/comments/{{ movie.id }}">voir les commentaires</a>
                                         </div>
                                     </div>
                                 </div>
