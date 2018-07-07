@@ -28,14 +28,35 @@ class LoginController extends Controller
      */
     public function log(Request $request, SessionInterface $session)
     {
+        $algo = PASSWORD_DEFAULT;
         $login= $request->get('login');
-        $pwd=$request->get('pwd');
+        var_dump($login);
+        $pwd= password_hash($request->get('pwd'),$algo);
+        echo($pwd);
         $user = $this->getDoctrine()
         ->getRepository(User::class)
-        ->findByLog($login,$pwd);
-
+        ->findOneBy(
+            [
+                'login' => $login  
+            ]
+        );
+        $userLog = $user->getLogin(); 
+        echo($userLog);  
+        $pwdVerif = password_verify($pwd,$user->getPassword());
+        echo($pwdVerif);
+        /*
+        if($userLog = $login && $pwdVerif == true)
+        {
+            $session->set('connected', $user);
+        }
+        else
+        {
+            $session->set('connected', null);
+        } 
+        */
         $session->set('connected', $user);
-
         return $this->redirectToRoute('home');
     }
+
+
 }

@@ -9,8 +9,7 @@ body{
     margin: 0 auto;
     font-size: 1.6em;
     font-family: 'Anton',
-    sans-serif;
-    
+    sans-serif;    
 }
 main {
     background-image: url("../images/cine.jpg");
@@ -22,6 +21,7 @@ main {
 }
 
 footer {
+    height: 4em;
     text-align: center; 
     bottom: 0px;   
 }
@@ -50,11 +50,7 @@ li:nth-child(5) a:hover {
     color: yellowgreen;
     text-decoration: none;
 }
-footer a:hover{
-    color:black;
-    text-decoration: none;
-    background-color: whitesmoke;
-}
+
 form[name="user"] input , form[name="user"] textarea , form[name="user"] select {
     margin-left:1em;
 }
@@ -68,7 +64,7 @@ form[name="comment"] input , form[name="comment"] textarea , form[name="comment"
     margin-left:1em;
 }
 h1 {
-    font-size: 2em;
+    font-size: 3em;
     
 }
 hr{
@@ -98,6 +94,9 @@ hr{
     margin: 1em;
     padding: 0.5em;
     border-radius: 0.3em;
+}
+.min-h{
+    min-height: 90vh;
 }
 .login{
     background-image: url("../images/login.jpg");
@@ -134,6 +133,28 @@ hr{
 }
 .footfilm{
     padding: 2.5em ;
+}
+.font-4{
+    font-size: 4em;
+}
+.font-2 {
+    font-size: 2em;
+}
+.font-1-5 {
+    font-size: 1.5em;
+}
+.relief{
+    text-shadow: 2px 0 0 black,
+    0 2px 0 black,
+    0 -2px 0 black,
+    -2px 0 0 black,
+    2px 2px 0 black,
+    2px -2px 0 black,
+    -2px 2px 0 black,
+    -2px -2px 0 black;
+}
+.white{
+    color:white;
 }
 #user{
     border: 0.3rem solid black;

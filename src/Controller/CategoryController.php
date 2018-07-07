@@ -64,7 +64,7 @@ class CategoryController extends Controller
             return $this->render('category/showMoviesByCategory.html.twig', [
                 'controller_name' => 'CategoryController',
                 'category' => $categoryRepository->find($id),
-                'user' => $session->get('connected')[0]
+                'user' => $session->get('connected')
             ]);
         } else {
         return $this->render('category/showMoviesByCategory.html.twig', ['category' => $categoryRepository->find($id)]);

@@ -50,15 +50,15 @@
 </header>
 <main role="main">
     <div class="container home">
-        <h1 class="display-4">FLOOFLIX</h1>
-        <p class="lead">Le cinéma à portée de clic....</p>
-        <hr class="my-4">
-        <p>Sélectionner votre film et faites chauffer le pop-corn !!</p>
-         {% if user is defined %}
-        <p style="color:blue">Bonjour {{ user }} !</p>
+        <h1 class="display-4 relief font-4">FLOOFLIX</h1>
+        <p class="lead relief font-2">Le cinéma à portée de clic....</p>
+        {% if user is defined %}
+        <p class="relief white">Bonjour {{ user }}!  Bienvenue sur flooflix</p>
         {% endif %}
+        <hr class="my-4">
+        <p class="relief">Sélectionner votre film et faites chauffer le pop-corn !!</p>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="/category/categories" role="button">choisir un film --></a>
+        <a class="btn btn-primary btn-lg font-1-5" href="/category/categories" role="button">choisir un film --></a>
         </p> 
     </div>
 </main>

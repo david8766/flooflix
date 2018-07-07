@@ -19,8 +19,8 @@ class UserRepository extends ServiceEntityRepository
         parent::__construct($registry, User::class);
     }
 
-    public function findByLog($login , $pwd)
-    {
+    public function findByLog($login)
+    { 
         return $this->createQueryBuilder('user')
             ->andWhere('user.login = :login')
             ->andWhere('user.password = :pwd')
