@@ -12,7 +12,7 @@
                 <div class="row">
                     {% for category in categories %}
                     <div class="card text-white bg-dark mb-3 col-md-3">
-                        <img class="card-img-top img-fluid" src="http://via.placeholder.com/450x250" alt="Card image cap">
+                        <img class="card-img-top img-fluid" src="../images/{{ category.img }}" alt="Card image cap">
                         <div class="card-body">
                             <h2 class="card-title">{{ category.genre }}</h2>
                             <a class="btn btn-primary btn-lg" href="/category/showMoviesByCategory/{{ category.id }}">Liste des films</a>

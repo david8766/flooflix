@@ -29,7 +29,7 @@ class RegisterController extends Controller
     /**
      * @Route("/register/reg", name="register_reg" )
      */
-    public function reg(Request $request)
+    public function reg(Request $request, SessionInterface $session)
     {
         
         $model = $this->getDoctrine()->getManager();
@@ -55,6 +55,8 @@ class RegisterController extends Controller
 
         $model->persist($user);
         $model->flush();
+
+        $session->set('connected', $user);
 
         return $this->redirect($this->generateUrl('user_register', array('id' => $user->getId())));
     

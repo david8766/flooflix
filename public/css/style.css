@@ -28,6 +28,7 @@ footer {
 
 footer p {
     margin-bottom: 0;
+    padding: 0;
     color: aliceblue;
 }
 li:nth-child(5){
@@ -72,6 +73,7 @@ hr{
 }
 .home{
     color: rgb(252, 229, 165);
+    height: 90vh;
 }
 .jumbotron{
     height: 100%;
@@ -98,6 +100,10 @@ hr{
 .min-h{
     min-height: 90vh;
 }
+.img-film{
+    align-content: center;
+    padding-bottom: 1em;
+}
 .login{
     background-image: url("../images/login.jpg");
     background-repeat: no-repeat;
@@ -108,6 +114,7 @@ hr{
 .form-login{
     padding-top: 10em;
     padding-bottom: 20em;
+    margin-bottom: 8em;
 }
 .film h1{
     font-size: 3em;
@@ -198,9 +205,13 @@ hr{
     border-radius: 0.3em;
     padding: 1em;
 }
-
+#quit{
+    margin-top:20em;
+    margin-bottom:25em;
+}
 #register{
-    margin-top: 5em;
     margin-left: 10em;
+    padding-top: 6em;
+    margin-bottom: 6em;
     font-size: 1em;
 }

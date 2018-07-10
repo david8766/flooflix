@@ -1,40 +1,48 @@
 {% extends 'base.html.twig' %} 
 {% block title %}Inscription{% endblock %}
 {% block body %}
-<a class="btn btn-primary btn-lg" href="/">Retour à l'accueil du site</a>
-<div class="container">
-    <div class="row" id="register">
-        <div class="col-lg-6">
-            <h1>Formulaire d'inscription:</h1>
-            <br>
-            <form action="register/reg" method="post">
-                <div class="form-group">
-                    <label for="lastName">Nom:</label>
-                    <input type="text" class="form-control" name="lastName" required="required" placeholder="Nom">
-                </div>
-                <div class="form-group">
-                    <label for="firstName">Prénom:</label>
-                    <input type="text" class="form-control" name="firstName" required="required" placeholder="Prénom">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" name="mail" required="required" placeholder="Email">
-                </div>
-                <div class="form-group">
-                    <label for="login">Pseudo:</label>
-                    <input type="text" class="form-control" name="login" required="required" placeholder="Pseudo">
-                </div>
-                <div class="form-group">
-                    <label for="pwd">Mot de passe:</label>
-                    <input type="text" class="form-control" name="pwd" required="required" placeholder="Mot de passe">
-                </div>
+<div class="container-fluid login">
+    <a href="/">
+        <img src="../../images/flooflix2.png" alt="FLOOFLIX">
+    </a>
+    <div class="container">
+        <div class="row" id="register">
+            <div class="col-lg-6">
+                <h1>Formulaire d'inscription:</h1>
                 <br>
-                <button type="submit" class="btn btn-primary">Valider</button> 
-            </form>      
+                <form action="register/reg" method="post">
+                    <div class="form-group">
+                        <label for="lastName">Nom:</label>
+                        <input type="text" class="form-control" name="lastName" required="required" placeholder="Nom">
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">Prénom:</label>
+                        <input type="text" class="form-control" name="firstName" required="required" placeholder="Prénom">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" name="mail" required="required" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="login">Pseudo:</label>
+                        <input type="text" class="form-control" name="login" required="required" placeholder="Pseudo">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Mot de passe:</label>
+                        <input type="text" class="form-control" name="pwd" required="required" placeholder="Mot de passe">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Valider</button> 
+                </form>      
+            </div>
         </div>
+        </form>
+        <br>
     </div>
-    </form>
-    <br>
+    <hr>
+    <footer>
+        <a class="btn btn-primary btn-lg" href="/">Retour à l'accueil du site</a>
+    </footer>
 </div>
 {% block javascripts %}
 <script src="script.js"></script>

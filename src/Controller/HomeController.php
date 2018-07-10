@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Entity\User;
 
 class HomeController extends Controller
 {
@@ -17,12 +18,11 @@ class HomeController extends Controller
     {
         if(!is_null($session->get('connected')) and !empty($session->get('connected')))
         {
-            //$test = $session->get('connected');
-            //var_dump($test);
             return $this->render('home/index.html.twig', [
                 'controller_name' => 'HomeController',
                 'user' => $session->get('connected')->getFirstName(),
-                'userRole' => $session->get('connected')->getRole()
+                'userRole' => $session->get('connected')->getRole(),
+                'userId' => $session->get('connected')->getId()
             ]);
         } else {
             return $this->render('home/index.html.twig', [
