@@ -4,6 +4,7 @@
 
 html{
     font-size: 62.5%;   
+    min-height: 100vh;
 }
 body{
     margin: 0 auto;
@@ -16,12 +17,11 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
-    height:87vh;
     color: black;
 }
 
 footer {
-    height: 4em;
+    height: 5vh;
     text-align: center; 
     bottom: 0px;   
 }
@@ -71,9 +71,12 @@ h1 {
 hr{
     background-color: red;
 }
+.film{
+    min-height:89vh;
+}
 .home{
     color: rgb(252, 229, 165);
-    height: 90vh;
+    height: 91vh;
 }
 .jumbotron{
     height: 100%;
@@ -98,7 +101,7 @@ hr{
     border-radius: 0.3em;
 }
 .min-h{
-    min-height: 90vh;
+    min-height: 100vh;
 }
 .img-film{
     align-content: center;
@@ -116,6 +119,7 @@ hr{
     padding-bottom: 20em;
     margin-bottom: 8em;
 }
+
 .film h1{
     font-size: 3em;
     text-shadow: 2px 0 0 white,
